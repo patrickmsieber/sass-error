@@ -1,0 +1,103 @@
+.tingle-modal {
+    -webkit-overflow-scrolling: touch;
+}
+
+.tingle-modal-box {
+    @include transition(none);
+    border-radius: 0;
+    max-width: 800px;
+
+    @include media-breakpoint-down(sm) {
+        width: 80%;
+    }
+
+    @include media-breakpoint-down(xs) {
+        width: 100%;
+        top: 0;
+    }
+
+}
+.tingle-modal.side-page {
+    overflow-x: hidden;
+    z-index: 99999;
+
+    .tingle-modal-box {
+        margin-right: 0;
+        top: 0 !important;
+        min-height: 100%;
+        opacity: 0;
+        @transform: translate(15%, 0);
+        // @include transition-transform(#{'.8s, opacity 0.6s .1s'});
+
+        @media (min-width: map-get($grid-breakpoints, 'sm')) and (max-width: 1700px) {
+            .max-width {
+                max-width: 90%;
+            }
+        }
+    }
+
+    .tingle-modal-box__content {
+        padding-top: $spacing-2;
+        padding-bottom: $spacing-2;
+        max-width: 88%;
+        margin: 0 auto;
+
+        @include media-breakpoint-down(xs) {
+            max-width: 100%;
+            padding-top: $spacing-3;
+            padding-left: $spacing-1;
+            padding-right: $spacing-1;
+        }
+        &.animate {
+            will-change: opacity;
+            @include transition(opacity .6s);
+        }
+    }
+
+    .tingle-modal__close {
+        line-height: 1;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include media-breakpoint-down(xs) {
+            left: auto;
+            left: 0;
+            top: 0;
+            background: red;
+            border-radius: 0;
+        }
+
+        @include media-breakpoint-up(sm) {
+            left: -10px; top: 10px;
+            @transform: translate(-100%, 0);
+        }
+    }
+
+    &.tingle-modal--visible {
+        .tingle-modal-box {
+            @transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Print Settings for modal
+
+*/
+
+body.tingle-enabled {
+    @media print {
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        .site-header,
+        .main-blog-container,
+        .site-footer {
+            display: none;
+        }
+    }
+}

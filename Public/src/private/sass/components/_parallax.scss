@@ -1,0 +1,28 @@
+.parallax-window {
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    color: $white;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+
+    .bg-image {
+        background-repeat: no-repeat;
+        height: 140%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    @media (max-width: 1023px) {
+        min-height: 400px;
+    }
+    @media (max-width: 512px) {
+        min-height: 300px;
+    }
+}

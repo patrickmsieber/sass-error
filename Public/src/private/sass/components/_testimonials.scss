@@ -1,0 +1,39 @@
+.testimonial-entry {
+    text-align: center;
+    @include max-width-2();
+    @include make-padding-row-xs($spacing-2);
+    @include make-padding-row-sm($spacing-3);
+}
+
+
+.testimonials-container {
+    .slick-dots {
+        li {
+            height: auto;
+            width: auto;
+            margin: 0 8px;
+            button {
+                border-radius: 50%;
+                background: map-get($slick-theme, dot-color);
+                width: 14px;
+                height: 14px;
+                border: $border-width solid map-get($slick-theme, dot-border-color);
+            }
+
+            &.slick-active button {
+                background: map-get($slick-theme, dot-active-color);
+            }
+            
+            button,
+            &.slick-active button {
+                @include hover-focus-active {
+                    background: map-get($slick-theme, dot-hover-color);
+                }
+            }
+
+            button:before {
+                content: none;
+            }
+        }
+    }
+}

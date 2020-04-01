@@ -1,0 +1,4 @@
+.sg-theme-1 {
+    @include theme-variant($theme-default);
+    @include theme-variant($theme-dark);
+}

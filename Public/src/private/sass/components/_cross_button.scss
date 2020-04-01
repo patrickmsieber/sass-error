@@ -1,0 +1,154 @@
+
+// mobile menu button
+.navbar-toggler {
+    position: fixed;
+    top: 20px; right: 5px;
+    padding: 10px 5px 7px;
+    color: $nav-toggler-color-active !important;
+    border: $nav-toggler-border;
+    transition: 300ms;
+    z-index: 9999;
+
+    @media (min-width: $nav-breakpoint-up) {
+        display: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+        background: $nav-toggler-color-active;
+
+        + .icon-bar { margin-top: 4px; }
+    }
+
+    .lines-button {
+        user-select: none;
+        position: relative;
+        top: -6px;
+        display: block;
+
+        .menu-text {
+            display: block;
+            margin-top: 8px;
+            line-height: 1em;
+        }
+
+        .lines {
+            position: relative;
+            display: inline-block;
+            background: $nav-toggler-color-active;
+
+            &:before, &:after {
+                content: '';
+                display: inline-block;
+                background: $nav-toggler-color-active;
+                position: absolute;
+                left: 0;
+            }
+
+            &, &:before, &:after {
+                height: 3px;
+                width: 30px;
+                transition: 300ms;
+                transform-origin: 50%;
+                border-radius: 5px;
+            }
+
+            &:before { top: -7px; }
+            &:after { top: 7px; }
+        }
+
+        @media (max-width: $nav-breakpoint-down) {
+            .lines {
+                background: transparent;
+
+                &, &:before, &:after { width: 20px; }
+                &:before, &:after { top: 0; }
+                &:before { transform: rotate3d(0, 0, 1, 45deg); }
+                &:after { transform: rotate3d(0, 0, 1, -45deg); }
+            }
+        }
+    }
+}
+
+.restaurant .navbar-toggler {
+    color: $nav-toggler-rest-color-active !important;
+
+    .icon-bar {
+        background: $nav-toggler-rest-color-active;
+    }
+
+    .lines-button {
+
+        .lines {
+            background: $nav-toggler-rest-color-active;
+
+            &:before, &:after {
+                background: $nav-toggler-rest-color-active;
+            }
+        }
+    }
+}
+.restaurant-see .navbar-toggler {
+    color: $nav-toggler-see-color-active !important;
+
+    .icon-bar {
+        background: $nav-toggler-see-color-active;
+    }
+
+    .lines-button {
+
+        .lines {
+            background: $nav-toggler-see-color-active;
+
+            &:before, &:after {
+                background: $nav-toggler-see-color-active;
+            }
+        }
+    }
+}
+.restaurant-park .navbar-toggler {
+    color: $nav-toggler-park-color-active !important;
+
+    .icon-bar {
+        background: $nav-toggler-park-color-active;
+    }
+
+    .lines-button {
+
+        .lines {
+            background: $nav-toggler-park-color-active;
+
+            &:before, &:after {
+                background: $nav-toggler-park-color-active;
+            }
+        }
+    }
+}
+
+.collapsed &  .navbar-toggler {
+    color: $nav-toggler-color-sticky;
+    border: $nav-toggler-border-sticky;
+
+    .lines {
+        &, &:before, &:after {
+            background: $nav-toggler-color-sticky;
+        }
+
+        &:before {
+            top: -7px;
+            transform: rotate3d(0, 0, 1, 0);
+        }
+
+        &:after {
+            top: 7px;
+            transform: rotate3d(0, 0, 1, 0);
+        }
+    }
+}

@@ -1,0 +1,533 @@
+@import 'social_media';
+
+// #############################################################################
+// CUSTOM SETTINGS
+
+
+// #############################################################################
+// Brand Colors
+$grey: #646464;
+$grey-light: #f0eeec;
+$grey-border: #BFBFBF;
+$orange: #D68A47;
+$yellow: #FCFF96;
+$black: #000;
+$white: #fff;
+$red: #96286e;
+$blue: #003f6c;
+$red-dark: #6e1446;
+
+// Brand Colors Restaurant
+$rest-rest: #b48228;
+$rest-see: #003f6c;
+$rest-park: #006329;
+
+$rest-rest-dark: #b48228;
+$rest-see-dark: #003f6c;
+$rest-park-dark: #006329;
+
+// Brand Colors Restaurant
+$rest-rest-hover: #745506;
+$rest-see-hover: #08213b;
+$rest-park-hover: #003e19;
+
+
+// #############################################################################
+// Text colors
+$title-text-color:      $black;
+
+$theme-default: (
+    color: $black,
+    // background-color: blue,
+    link-color: $red,
+    link-decoration: none,
+    link-hover-color: $red-dark,
+    link-hover-decoration: none,
+    title-color: $black,
+    title-1-color: $red,
+    title-2-color: $red
+);
+
+$theme-brand: (
+    color: $white,
+    background-color: $red,
+    link-color: $white,
+    link-decoration: none,
+    link-hover-color: $white,
+    link-hover-decoration: none,
+    title-color: $white
+);
+
+$theme-default-restaurant: (
+    color: $black,
+    // background-color: blue,
+    link-color: $rest-rest,
+    link-decoration: none,
+    link-hover-color: $rest-rest-dark,
+    link-hover-decoration: none,
+    title-color: $black,
+    title-1-color: $rest-rest,
+    title-2-color: $rest-rest
+);
+
+$theme-default-see: (
+    color: $black,
+    // background-color: blue,
+    link-color: $rest-see,
+    link-decoration: none,
+    link-hover-color: $rest-see-dark,
+    link-hover-decoration: none,
+    title-color: $black,
+    title-1-color: $rest-see,
+    title-2-color: $rest-see
+);
+
+$theme-default-park: (
+    color: $black,
+    // background-color: blue,
+    link-color: $rest-park,
+    link-decoration: none,
+    link-hover-color: $rest-park-dark,
+    link-hover-decoration: none,
+    title-color: $black,
+    title-1-color: $rest-park,
+    title-2-color: $rest-park
+);
+
+$theme-brand-restaurant: (
+    color: $black,
+    background-color: $grey-light,
+    link-color: $black,
+    link-decoration: none,
+    link-hover-color: $black,
+    link-hover-decoration: none,
+    title-color: $black
+);
+
+$theme-dark: (
+    background-color: $grey-light
+);
+
+$theme-navigation-lv2: (
+    background-color: $grey-light,
+    link-color: $black,
+    link-hover-color: $red-dark
+);
+
+
+// #############################################################################
+// Font sizes
+
+// <small> and <h5> font size
+$font-size-small: (
+    size-xs:     1rem,
+    size-sm:     .88rem,
+    size-md:     .88rem,
+    size-lg:     .88rem,
+    line-height-xs: 1.5,
+    line-height-sm: 1.7,
+    // line-height-md: 1.5,
+    // line-height-lg: 1.5
+);
+
+// standard <p> and <h4> font size
+$font-size-default: (
+    size-xs:     1.1rem,
+    size-sm:     1.05rem,
+    size-md:     1.05rem,
+    size-lg:     1.05rem,
+    line-height-xs: 1.5
+);
+
+$font-size-small-title: (
+    size-xs:     1.4rem,
+    size-sm:     1.25rem,
+    size-md:     1.25rem,
+    size-lg:     1.25rem,
+    line-height-xs: 1.3
+);
+
+// <h3> and <p> lead font size
+$font-size-medium: (
+    size-xs:     1.4rem,
+    size-sm:     1.5rem,
+    size-md:     1.5rem,
+    size-lg:     1.5rem,
+    line-height-xs: 1.3
+);
+
+// <h2> font size
+$font-size-large: (
+    size-xs:     2.0rem,
+    size-sm:     2.4rem,
+    size-md:     2.4rem,
+    size-lg:     2.4rem,
+    line-height-xs: 1.1
+);
+
+// <h1> font size
+$font-size-xlarge: (
+    size-xs:     2.5rem,
+    size-sm:     2.8rem,
+    size-md:     2.8rem,
+    size-lg:     2.8rem,
+    line-height-xs: 1.1
+);
+
+
+// #############################################################################
+// Other
+$icon-size:             1.45em;
+$icon-size-small:       1em;
+$icon-size-download-xs: 0.85rem;
+$icon-size-xs:          0.65rem;
+$padding-nav-mobile:    14px 15px;
+$divider-line-color:    $grey;
+
+$footer-height: (
+    sm: 430px,
+    md: 430px
+);
+
+
+// #############################################################################
+// Container Widths
+$max-width-1:           750px;
+$max-width-2:           1000px;
+$max-width-3:           1280px;
+
+$max-width-perc:        91.8%;
+
+
+// #############################################################################
+// Links
+$link-transition:               $transition-base;
+$link-icon-size:                $icon-size-xs;
+$link-icon-padding:             1.6em;
+
+
+// #############################################################################
+// Buttons
+$icon-size-button:                  $icon-size-small; // used for most icons
+$icon-size-button-xs:               $icon-size-xs; // used for > or < icons
+
+$btn-disable-border:                true;
+$btn-disable-active-box-shadow:     true;
+
+$button-primary-theme: (
+    color:              $white,
+    hover-background:   $red-dark,
+    active-background:  $primary,
+    hover-color:        $white,
+    hover-box-shadow:   none
+);
+
+$button-primary-inverted-theme: (
+    color:              $red,
+    hover-background:   $white,
+    background-color:   $white,
+    active-background:  $white,
+    hover-color:        $red-dark,
+    hover-box-shadow:   none
+);
+
+$button-secondary-theme: (
+    color:              $red,
+    hover-background:   $grey-light,
+    active-background:  $grey-light,
+    hover-color:        $red-dark,
+    hover-box-shadow:   none
+);
+
+// Restaurant
+$button-primary-theme-rest: (
+    color:              $white,
+    hover-background:   $rest-rest-dark,
+    active-background:  $primary,
+    hover-color:        $white,
+    hover-box-shadow:   none
+);
+
+$button-primary-inverted-theme-rest: (
+    color:              $rest-rest,
+    hover-background:   $white,
+    background-color:   $white,
+    active-background:  $white,
+    hover-color:        $rest-rest-dark,
+    hover-box-shadow:   none
+);
+
+$button-secondary-theme-rest: (
+    color:              $rest-rest,
+    hover-background:   $grey-light,
+    active-background:  $grey-light,
+    hover-color:        $rest-rest-dark,
+    hover-box-shadow:   none
+);
+
+// Restaurant Park
+$button-primary-theme-rest: (
+    color:              $white,
+    hover-background:   $rest-rest-dark,
+    active-background:  $rest-rest,
+    hover-color:        $white,
+    hover-box-shadow:   none
+);
+
+$button-primary-inverted-theme-rest: (
+    color:              $rest-rest,
+    hover-background:   $white,
+    background-color:   $white,
+    active-background:  $white,
+    hover-color:        $rest-rest-dark,
+    hover-box-shadow:   none
+);
+
+$button-secondary-theme-rest: (
+    color:              $rest-rest,
+    hover-background:   $grey-light,
+    active-background:  $grey-light,
+    hover-color:        $rest-rest-dark,
+    hover-box-shadow:   none
+);
+
+// Restaurant See
+$button-primary-theme-see: (
+    color:              $white,
+    hover-background:   $rest-see-dark,
+    active-background:  $rest-see,
+    hover-color:        $white,
+    hover-box-shadow:   none
+);
+
+$button-primary-inverted-theme-see: (
+    color:              $rest-see,
+    hover-background:   $white,
+    background-color:   $white,
+    active-background:  $white,
+    hover-color:        $rest-see-dark,
+    hover-box-shadow:   none
+);
+
+$button-secondary-theme-see: (
+    color:              $rest-see,
+    hover-background:   $grey-light,
+    active-background:  $grey-light,
+    hover-color:        $rest-see-dark,
+    hover-box-shadow:   none
+);
+
+// Restaurant Park
+$button-primary-theme-park: (
+    color:              $white,
+    hover-background:   $rest-park-dark,
+    active-background:  $rest-park,
+    hover-color:        $white,
+    hover-box-shadow:   none
+);
+
+$button-primary-inverted-theme-park: (
+    color:              $rest-park,
+    hover-background:   $white,
+    background-color:   $white,
+    active-background:  $white,
+    hover-color:        $rest-park-dark,
+    hover-box-shadow:   none
+);
+
+$button-secondary-theme-park: (
+    color:              $rest-park,
+    hover-background:   $grey-light,
+    active-background:  $grey-light,
+    hover-color:        $rest-park-dark,
+    hover-box-shadow:   none
+);
+
+
+$button-link-theme: (
+    color:              $white
+);
+
+// #############################################################################
+// Font & text styles
+$title-underline-color:      $black;
+$title-sidelines-color:      $black;
+
+
+// #############################################################################
+// Lists
+$default-ul-li-spacings:     0.2em;
+$list-icon-padding:          16px;
+$list-icon-size:             10px;
+$list-icon-color:            $black;
+$list-icon-left:             0px;
+
+$checklist-icon-color:       $black;
+$checklist-icon:             '-';
+$checklist-icon-size:        0.8em;
+$checklist-icon-padding:     1.1em;
+
+// #############################################################################
+// Slick
+$slick-theme: (
+    dot-color:          $grey,
+    dot-hover-color:    $red-dark,
+    dot-active-color:   $red,
+    dot-border-color:   transparent
+);
+
+// #############################################################################
+// Navigation
+$nav-breakpoint-up:         map-get($grid-breakpoints, md);
+$nav-breakpoint-down:       $nav-breakpoint-up - 1px;
+$transition-nav-reduced:    padding 300ms, height 300ms;
+$navbar-height: (
+    break_under: 80px, // Mobile nav height
+    break_above: 50px, // Desktop nav height
+    break_above_reduced: 60px   // Desktop nav height reduced
+);
+
+$navbar-brand-height: (
+    break_under: 80px, // Mobile nav height
+    break_above: 81px, // Desktop nav height
+    break_above_reduced: 60px   // Desktop nav height reduced
+);
+
+$navbar-padding-top:                0;
+$navbar-padding-bottom:             0;
+
+$nav-link-color:                    $black;
+$nav-link-hover-color:              $red-dark;
+$nav-rest-link-hover-color:         $rest-rest-dark;
+$nav-see-link-hover-color:          $rest-see-dark;
+$nav-park-link-hover-color:         $rest-park-dark;
+$nav-link-hover-bg:                 transparent;
+$nav-link-active-color:             $red;
+$nav-rest-link-active-color:        $rest-rest;
+$nav-see-link-active-color:         $rest-see;
+$nav-park-link-active-color:        $rest-park;
+$nav-link-active-bg:                transparent;
+$nav-link-icon-size:                6px;
+
+$navbar-bg:                         $white;
+$navbar-bg-mobile:                  $white;
+
+$nav-logo-padding:                  10px;
+$nav-logo-padding-reduced:          10px;
+$nav-logo-padding-mobile:           10px;
+
+$nav-link-mobile-x-alignment:       center;
+
+$nav-chevron-size:                  0.5em; // size of chevron for dropdowns
+$dropdown-drop-shadow:              0px 0px 10px -2px rgba(0, 0, 0, 0.4);
+$dropdown-mobile-bg:                none;
+
+$nav-link-mobile-border:            $border-width solid $grey-border;
+$nav-link-mobile-color:             $black;
+$nav-link-mobile-x-alignment:       center;
+$nav-link-mobile-active-bg:         rgba(255,255,255,0.1);
+$nav-link-mobile-active-color:      $red;
+$nav-rest-link-mobile-active-color: $rest-rest;
+$nav-see-link-mobile-active-color:  $rest-see;
+$nav-park-link-mobile-active-color: $rest-park;
+$nav-link-mobile-hover-bg:          rgba(255,255,255,0.1);
+$nav-link-mobile-hover-color:       $red-dark;
+$nav-rest-link-mobile-hover-color:  $rest-rest-dark;
+$nav-see-link-mobile-hover-color:   $rest-see-dark;
+$nav-park-link-mobile-hover-color:  $rest-park-dark;
+
+$dropdown-item-mobile-active-bg:           none;
+$dropdown-item-mobile-bg:                  transparent;
+$dropdown-item-mobile-hover-bg:            transparent;
+$dropdown-item-mobile-active-hover-bg:     none;
+$dropdown-item-mobile-active-color:        $red-dark;
+$dropdown-rest-item-mobile-active-color:   $rest-rest;
+$dropdown-see-item-mobile-active-color:    $rest-see;
+$dropdown-park-item-mobile-active-color:   $rest-park;
+$dropdown-item-mobile-color:               $black;
+$dropdown-item-mobile-hover-color:         $black;
+
+$nav-toggler-color:                 $red; // color of menu icon (closed)
+$nav-toggler-color-active:          $red; // color of menu icon (open)
+$nav-toggler-border:                none;
+$nav-toggler-color-sticky:          $red; // color when navbar is collapsed
+$nav-toggler-border-sticky:         $nav-toggler-border;
+
+// Restaurant
+$nav-toggler-rest-color:             $rest-rest; // color of menu icon (closed)
+$nav-toggler-rest-color-active:      $rest-rest; // color of menu icon (open)
+$nav-toggler-rest-color-sticky:      $rest-rest; // color when navbar is collapsed
+
+$nav-toggler-see-color:              $rest-see; // color of menu icon (closed)
+$nav-toggler-see-color-active:       $rest-see; // color of menu icon (open)
+$nav-toggler-see-color-sticky:       $rest-see; // color when navbar is collapsed
+
+$nav-toggler-park-color:             $rest-park; // color of menu icon (closed)
+$nav-toggler-park-color-active:      $rest-park; // color of menu icon (open)
+$nav-toggler-park-color-sticky:      $rest-park; // color when navbar is collapsed
+
+$dropdown-mobile-bg:                transparent;
+$dropdown-item-padding-y-mobile:    0.6rem;
+$dropdown-item-padding-x-mobile:    1rem;
+$dropdown-padding-y-mobile:         0;
+
+// #############################################################################
+// Forms
+$form-field-padding-small:            0.2rem 0.6rem;
+
+$custom-select-multiple-spacing:      10px; // spacing between field and makes sure each field is the same width
+
+$required-field:                      $danger;
+$required-field-size:                 22px;
+$error-input-border-color:            lighten($danger, 20%);
+$error-input-focus-border-color:      #3E87C8;
+$error-input-focus-box-shadow:        none;
+
+$form-label-margin-bottom:            0.2rem;
+
+// special styling for checkbox and radio buttons if necessary
+$radio-checkbox-list-margin-top:      6px; // spacing between the title and radio buttons or checkboxes
+$radio-checkbox-margin-top:           5px; // spacing between radio buttons and checkboxes vertically
+$radio-label-padding-left:            30px; // spacing for radio button before label
+$radio-margin-left:                   30px; // spacing between two options
+$radio-size:                          24px; // height and width of the radio button background
+
+$checkbox-margin-left:                30px; // spacing between two options
+
+
+
+
+// #############################################################################
+// Spacings
+// Gray and brand colors for use across Bootstrap.
+
+$spacing-0: 5px;
+$spacing-1: 15px;
+$spacing-2: 35px;
+$spacing-3: 60px;
+$spacing-4: 100px;
+
+$site-header-height: (
+    break_under: 60px,
+    break_above: 125px
+);
+
+
+// #############################################################################
+// teaser image
+$teaser-image-color: (
+    xs: map-get($theme-default, color),
+    md: $white
+);
+$teaser-image-color-restaurant: (
+    xs: map-get($theme-default-restaurant, color),
+    md: $white
+);
+$teaser-image-color-see: (
+    xs: map-get($theme-default-see, color),
+    md: $white
+);
+$teaser-image-color-park: (
+    xs: map-get($theme-default-park, color),
+    md: $white
+);

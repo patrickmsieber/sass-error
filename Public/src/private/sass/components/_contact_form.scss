@@ -1,0 +1,9 @@
+.contact-form-wrapper {
+    .field-info {
+        margin-bottom: $spacing-1;
+    }
+}
+
+* + .contact-form-wrapper {
+    margin-top: $spacing-1;
+}

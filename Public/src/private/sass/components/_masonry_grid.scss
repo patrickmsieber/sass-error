@@ -1,0 +1,33 @@
+.masonry-grid {
+    $gutter-space: 3%;
+    $grid-item-width: percentage(1/3) - (2 * $gutter-space) / 3;
+    $grid-item-width-tablet: percentage(1/2) - (2 * $gutter-space) / 3;
+    
+    .grid-sizer {
+        width: $grid-item-width;
+    }
+
+    .gutter-sizer {
+        width: $gutter-space;
+    }
+    
+    .grid-item {
+        padding: $spacing-1;
+        border-radius: $border-width;
+        width: $grid-item-width;
+        margin-bottom: $gutter-space;
+        background: $white;
+        
+        @include media-breakpoint-down(md) {
+            width: $grid-item-width-tablet;
+        }
+        
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+    }
+    
+    @include media-breakpoint-down(xs) {
+        margin: 0;
+    }
+}

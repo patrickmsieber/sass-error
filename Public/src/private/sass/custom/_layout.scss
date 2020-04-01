@@ -1,0 +1,104 @@
+.page-content-wrapper {
+    overflow: hidden;
+
+    > *:last-child {
+        margin-bottom: $spacing-3;
+    }
+
+    > .page-layout-large:first-child {
+        margin-top: $spacing-2;
+
+        @include media-breakpoint-up(sm) {
+            margin-top: $spacing-3;
+        }
+    }
+}
+
+.main-content {
+    @include theme-variant($theme-default);
+}
+.restaurant .main-content, .restaurant .row-dark, .restaurant .row-default {
+    @include theme-variant($theme-default-restaurant);
+}
+.restaurant-see .main-content, .restaurant-see .row-dark, .restaurant-see .row-default {
+    @include theme-variant($theme-default-see);
+}
+.restaurant-park .main-content, .restaurant-park .row-dark, .restaurant-park .row-default {
+    @include theme-variant($theme-default-park);
+}
+
+.row-dark {
+    @include theme-variant($theme-default);
+    @include theme-variant($theme-dark);
+    @include make-padding-row-xs($spacing-2);
+    @include make-padding-row-sm($spacing-3);
+
+    &.no-padding {
+        @include media-breakpoint-up(sm) {
+            padding-top: 0;
+        }
+        padding-bottom: 0;
+    }
+
+    & > .row-default {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.row-default {
+    @include theme-variant($theme-default);
+    @include make-padding-row-xs($spacing-2);
+    @include make-padding-row-sm($spacing-3);
+
+    blockquote {
+        color: $red;
+    }
+}
+
+.cms-grid.cells-space-default > .column.full-heigth {
+    padding-bottom: 0;
+    
+    @include media-breakpoint-up(sm) {
+        padding-top: 0;
+    }
+}
+
+.gallery-plugin {
+    margin-bottom: $spacing-3;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+* + .gallery-plugin {
+    margin-top: $spacing-3;
+}
+
+.layout--center {
+    text-align: center;
+
+    [class*="col-"] {
+        margin: 0 auto;
+    }
+
+    .formContainer {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .form-group {
+        text-align: left;
+    }
+
+    .checkbox--first {
+        margin-top: 25px;
+    }
+}
+
+.col-sm-16--left35 {
+    @include media-breakpoint-up(sm) {
+        padding-left: 35px;
+    }
+}

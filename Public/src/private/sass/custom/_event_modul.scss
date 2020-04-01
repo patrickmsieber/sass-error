@@ -1,0 +1,15 @@
+.event-modul {
+    @include theme-variant($theme-dark);
+    padding: $spacing-3 $spacing-2;
+
+    .event-table {
+        tr:last-child td,
+        td {
+            border-color: $grey-border;
+        }
+    }
+}
+
+* + .event-modul {
+    margin-top: $spacing-3;
+}

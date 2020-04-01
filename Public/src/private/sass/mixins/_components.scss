@@ -1,0 +1,91 @@
+@mixin grid-gutter-width($size) {
+    margin-left: -$size / 2;
+    margin-right: -$size / 2;
+
+    > [class^=col] {
+        padding-left: $size / 2;
+        padding-right: $size / 2;
+    }
+}
+
+@mixin grid-gutter-width-vertical($size) {
+    margin-top: -$size / 2;
+    margin-bottom: -$size / 2;
+
+    > [class^=col] {
+        padding-top: $size / 2;
+        padding-bottom: $size / 2;
+    }
+}
+
+@mixin img-cover() {
+    @include aspect-ratio(percentage(3/5));
+    img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        bottom: auto;
+        right: auto;
+        transform: translate(-50%, 0);
+        min-width: 100%;
+
+        @include media-breakpoint-up(md) {
+            height: 100%;
+            width: auto;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 100%;
+            width: auto;
+
+            .pageHome & {
+                left: 10%;
+            }
+        }
+    }
+
+    .newsImage img {
+        @include media-breakpoint-up(md) {
+            height: initial;
+            width: auto;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include aspect-ratio(43.2%);
+    }
+}
+
+
+@mixin nav-arrow {
+    @include icon-right(0, $icomoon-arrow-nav, $icon-size: $nav-link-icon-size);
+
+    &.active:before,
+    &:hover:before {
+        transform: rotate(180deg);
+    }
+
+    &:before {
+        position: absolute;
+        right: 0;
+        transform: rotate(90deg);
+        top: 16px;
+        color: $red;
+        transform-origin: 5px 4px;
+        transition: transform 400ms;
+    }
+}
+
+@mixin nav-arrow-sub {
+    @include icon-left(1.4rem, $icomoon-icon-arrow-1-right, $icon-size: 0.6rem);
+
+    &.active:before,
+    &:hover:before {
+        left: -3px;
+    }
+
+    &:before {
+        transition: left 300ms;
+        color: $red;
+    }
+}

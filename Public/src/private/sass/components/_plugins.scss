@@ -1,0 +1,6 @@
+.text-content {
+    .picture-plugin + *,
+    * + .picture-plugin {
+        margin-top: .4em;
+    }
+}

@@ -1,0 +1,11 @@
+@mixin grid-border($num_items) {
+    width: 100% / $num_items;
+
+    &:nth-child(#{$num_items}n+#{1}) {
+        border-left: 1px solid $grau;
+    }
+
+    &:nth-child(1n+#{$num_items + 1}) {
+        border-top: none;
+    }
+}

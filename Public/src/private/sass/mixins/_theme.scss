@@ -1,0 +1,108 @@
+@mixin button-theme-variant($theme) {
+    color: map-get($theme, color);
+    background-color: map-get($theme, background-color);
+    border-color: map-get($theme, border-color);
+
+    @include hover-focus-active {
+        color: map-get($theme, hover-color);
+        background: map-get($theme, hover-background);
+        border-color: map-get($theme, hover-border);
+        box-shadow: map-get($theme, hover-box-shadow);
+    }
+
+    &:not([disabled]):not(.disabled):active,
+    &:not([disabled]):not(.disabled).active {
+        background-color: map-get($theme, active-background);
+    }
+}
+
+@mixin theme-variant($theme) {
+    color: map-get($theme, color);
+    background-color: map-get($theme, background-color);
+
+    @if map-get($theme, background) {
+        background: map-get($theme, background);
+    }
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5 {
+        &, a:not(.btn) {
+            color: map-get($theme, title-color);
+        }
+    }
+
+    h1, .h1 {
+        &, a:not(.btn) {
+            color: map-get($theme, title-1-color);
+        }
+    }
+
+    h2, .h2 {
+        &, a:not(.btn) {
+            color: map-get($theme, title-2-color);
+        }
+    }
+
+    h3, .h3 {
+        &, a:not(.btn) {
+            color: map-get($theme, title-3-color);
+        }
+    }
+
+    h4, .h4 {
+        &, a:not(.btn) {
+            color: map-get($theme, title-4-color);
+        }
+    }
+
+    h5, .h5 {
+        &, a:not(.btn) {
+            color: map-get($theme, title-5-color);
+        }
+    }
+
+    p.lead {
+        color: map-get($theme, p-lead-color);
+    }
+
+    a:not(.btn) {
+        color: map-get($theme, link-color);
+        text-decoration: map-get($theme, link-decoration);
+
+        @include hover-focus-active {
+            color: map-get($theme, link-hover-color);
+            text-decoration: map-get($theme, link-hover-decoration);
+        }
+
+        &.link-style-2 {
+            color: map-get($theme, link-style-2-color);
+            text-decoration: map-get($theme, link-style-2-decoration);
+
+            @include hover-focus-active {
+                color: map-get($theme, link-style-2-hover-color);
+                text-decoration: map-get($theme, link-style-2-hover-decoration);
+            }
+        }
+
+        &.icon-link {
+            color: map-get($theme, icon-link-color);
+            text-decoration: map-get($theme, icon-link-decoration);
+
+            @include hover-focus-active {
+                text-decoration: map-get($theme, icon-link-hover-color);
+                text-decoration: map-get($theme, icon-link-hover-decoration);
+            }
+        }
+    }
+
+    ul, ul.checklist,
+    .text-content,
+    .text-content ul {
+        li:before {
+            color: map-get($theme, color);
+        }
+    }
+}

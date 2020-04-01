@@ -1,0 +1,29 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dd,
+p, figure, address,
+pre, table, fieldset, hr {
+    &:first-child { margin-top: 0; }
+    &:last-child { margin-bottom: 0; }
+}
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dd,
+p, figure, address,
+pre, table, fieldset, hr {
+    margin: 1.6em 0 0 0;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: 0.3em;
+}
+
+blockquote {
+    border: none;
+    margin: 0;
+    padding: 0;
+}

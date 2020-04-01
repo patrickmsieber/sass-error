@@ -1,0 +1,47 @@
+.side-nav {
+    .nav-title + * {
+        margin-top: 4px;
+    }
+
+    @media (max-width: $nav-breakpoint-down) {
+        display: none;
+    }
+
+    a {
+        color: $black;
+        padding: 9px 0;
+
+        @include hover-focus-active {
+            color: $red-dark;
+        }
+    }
+
+    > .nav > .nav-item {
+        position: relative;
+        @include nav-arrow;
+    }
+
+    .nav-item.active.current > a {
+        color: $black;
+    }
+
+    .nav-item.active.current > a {
+        color: $red;
+    }
+
+    .sub-nav {
+        margin: 4px 0;
+
+        a {
+            @include nav-arrow-sub;
+        }
+
+        /*li {
+            border-top: $border-width solid $grey;
+
+            &:last-child {
+                border-bottom: $border-width solid $grey;
+            }
+        }*/
+    }
+}

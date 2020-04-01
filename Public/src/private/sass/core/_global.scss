@@ -1,0 +1,142 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body.menuIsVisible {
+    overflow: hidden;
+}
+
+// #############################################################################
+// Lists
+
+.text-content ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        @include icon-left($padding: $list-icon-padding, $icon: '●', $icon-size: $list-icon-size);
+
+        &:before {
+            color: $list-icon-color;
+            top: 1.1em;
+        }
+
+        + li {
+            margin-top: $default-ul-li-spacings;
+        }
+    }
+
+    &.checklist {
+        li {
+            @include icon-left($padding: $checklist-icon-padding, $icon: $checklist-icon, $icon-size: $checklist-icon-size);
+
+            &:before {
+                top: 0.8em;
+                color: $checklist-icon-color;
+            }
+        }
+    }
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Site header
+
+*/
+
+.site-header {
+    width: 100%;
+    z-index: 9999;
+
+    @include media-breakpoint-down(xs) {
+        top: 0;
+    }
+}
+
+.table {
+    td, th {
+        vertical-align: middle;
+    }
+}
+
+.table-sm th,
+.table-sm td {
+    padding: 0.4rem;
+}
+
+.no-side-padding {
+    tr {
+        td {
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Breadcrumbs
+
+*/
+
+.breadcrumb {
+    padding: 0;
+    background: $white;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+
+    // Reset breadcrumbs styles
+    &:before {
+        content: none;
+    }
+
+    @include icon-left($padding: 1.5em, $icon: $icomoon-icon-arrow-1-right, $icon-size: 1.3em);
+
+    &:before {
+        padding-left: 2px;
+        top: 0;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Bootstrap legacy
+
+*/
+
+.hidden-xs {
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+
+.hidden-sm {
+    @include media-breakpoint-between(xs, sm) {
+        display: none;
+    }
+}
+
+.visible-xs,
+.visible-xs-block {
+    display: none;
+
+    @include media-breakpoint-down(sm) {
+        display: block !important;
+    }
+}
+
+.visible-sm-block {
+    display: none;
+
+    @include media-breakpoint-between(xs, sm) {
+        display: block !important;
+    }
+}

@@ -1,0 +1,56 @@
+.page-layout-small  {
+    @include max-width-1();
+}
+
+.page-layout-medium {
+    @include max-width-2();
+}
+
+.restaurant .page-layout-medium, .restaurant-see .page-layout-medium, .restaurant-park .page-layout-medium {
+    @include max-width-3();
+}
+
+.page-layout-large  {
+    @include max-width-3();
+}
+
+.page-layout-full {
+    @include full-width();
+}
+
+.container-page-wide {
+    padding-top: $spacing-2;
+    padding-bottom: $spacing-2;
+
+    @include max-width-3();
+}
+
+.container-page {
+    padding-top: $spacing-2;
+    padding-bottom: $spacing-2;
+
+    @include max-width-2();
+}
+
+.container-page-with-sitebar {
+    padding-top: $spacing-2;
+    padding-bottom: $spacing-2;
+
+    @include make-container();
+
+    .sidebar {
+        @media (min-width:1600px) {
+            width: 16%;
+            float: left;
+        }
+    }
+
+    .main-content {
+        @include make-col-ready();
+
+        @media (min-width:1600px) {
+            width: 84%;
+            float: right;
+        }
+    }
+}

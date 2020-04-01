@@ -1,0 +1,28 @@
+.site-header.fixed {
+    @media (min-width: $nav-breakpoint-up) {
+        position: fixed;
+        top: 0;
+
+        & + * {
+            margin-top: map-get($site-header-height, break_above);
+        }
+
+        &.extra-space {
+            & + * {
+                margin-top: map-get($site-header-height, break_above) + 40px;
+            }
+        }
+    }
+
+    @media (max-width: $nav-breakpoint-down) {
+        & + * {
+            margin-top: map-get($site-header-height, break_under);
+        }
+
+        &.extra-space {
+            & + * {
+                margin-top: map-get($site-header-height, break_under) + 20px;
+            }
+        }
+    }
+}

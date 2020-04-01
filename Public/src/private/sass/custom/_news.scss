@@ -1,0 +1,341 @@
+.news-preview {
+    h3 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+
+        & + p {
+            margin-top: 0;
+        }
+    }
+
+    .date {
+        margin-bottom: 5px;
+    }
+
+    .swiper-container {
+        padding-bottom: 75px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        @media (min-width: 941px) {
+            display: none;
+        }
+    }
+
+    .swiper-pagination {
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+    }
+
+    .swiper-slide {
+        height: auto;
+        padding-bottom: 50px;
+        position: relative;
+
+        @media (min-width: 768px) {
+            & + .swiper-slide {
+                &:before {
+                    content: '';
+                    width: $border-width;
+                    height: 100%;
+                    position: absolute;
+                    left: -16px;
+                    top: 0;
+                    background: $grey-border;
+                }
+            }
+        }
+    }
+
+    .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    .link-arrow-right {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+
+.news-img-wrap {
+    margin-bottom: 20px;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.news-clear {
+    border-top: none !important;
+    padding: 0 !important;
+}
+
+.page-navigation--fc {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0;
+    position: relative;
+}
+
+.fc_paginator {
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        padding: 0 5px;
+
+        a {
+            position: relative;
+        }
+    }
+
+    .link-arrow-left {
+        position: relative;
+        vertical-align: middle;
+        margin-right: -8px;
+        padding-left: 15px;
+
+        &>span {
+            border: 0;
+            clip: rect(0, 0, 0, 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+    }
+
+    .link-arrow-right {
+        position: relative;
+        vertical-align: middle;
+        margin-left: -8px;
+
+        &>span {
+            border: 0;
+            clip: rect(0, 0, 0, 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+    }
+}
+
+.paginate--info {
+    display: inline-block;
+    margin-left: auto;
+    text-align: right;
+}
+
+.backlink {
+    cursor: pointer;
+}
+
+.news--adventskalender {
+    display: block;
+
+    .newsItem__imageWrapper {
+        position: relative;
+        
+        &:before {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+            width: 100%;
+        }
+    }
+    .newsItem__image {
+        position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+        &--closed {
+            transform: rotateY(0deg);
+        }
+
+        &--hover {
+            transform: rotateY(90deg);
+        }
+    }
+
+    .newsItem--advent {
+        cursor: pointer;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        float: left;
+
+        &:after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+
+        @include media-breakpoint-up(sm) {
+            width: calc(100% / 2);
+        }
+
+        @include media-breakpoint-up(md) {
+            width: calc(100% / 4);
+        }
+
+        &--open {
+            .newsItem__image--closed {
+                animation: revealCalendar-hide 0.4s linear forwards;
+            }
+
+            .newsItem__image--hover {
+                animation: revealCalendar-show 0.4s linear forwards;
+            }
+        }
+    }
+}
+
+@supports (display: grid) {
+    .news--adventskalender {
+        // display: -ms-grid;
+        display: grid;
+        // -ms-grid-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        // -ms-grid-rows: repeat(auto);
+        grid-template-rows: repeat(auto);
+        grid-column-gap: 10px;
+
+        .newsItem__imageWrapper {
+            position: relative;
+            
+            &:before {
+                content: '';
+                display: block;
+                padding-bottom: 100%;
+                width: 100%;
+            }
+        }
+        .newsItem__image {
+            position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+            &--closed {
+                transform: rotateY(0deg);
+            }
+
+            &--hover {
+                transform: rotateY(90deg);
+            }
+        }
+
+        .newsItem--advent {
+            cursor: pointer;
+            // -ms-grid-column-span: 4;
+            grid-column: span 4;
+            float: none;
+            width: auto;
+
+            @include media-breakpoint-up(sm) {
+                // -ms-grid-column-span: 2;
+                grid-column: span 2;
+                width: auto;
+            }
+
+            @include media-breakpoint-up(md) {
+                // -ms-grid-column-span: 1;
+                grid-column: span 1;
+                width: auto;
+            }
+
+            &--open {
+                .newsItem__image--closed {
+                    animation: revealCalendar-hide 0.4s linear forwards;
+                }
+
+                .newsItem__image--hover {
+                    animation: revealCalendar-show 0.4s linear forwards;
+                }
+            }
+        }
+    }
+
+    .newsItem--advent--today {
+        animation: dayWiggle 4s 2s linear infinite;
+    }
+}
+
+@keyframes dayWiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    19% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(0deg);
+    }
+
+    22% {
+        transform: rotate(-1deg);
+    }
+    
+    24% {
+        transform: rotate(1deg);
+    }
+
+    26% {
+        transform: rotate(-1deg);
+    }
+    
+    28% {
+        transform: rotate(1deg);
+    }
+
+    30% {
+        transform: rotate(-1deg);
+    }
+
+    32% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes revealCalendar-hide {
+    50% {
+        transform: rotateY(-90deg);
+    }
+
+    100% {
+        transform: rotateY(-90deg);
+    }
+}
+
+@keyframes revealCalendar-show {
+    50% {
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}

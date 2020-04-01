@@ -1,0 +1,97 @@
+@import "variables";
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot');
+  src:  url('#{$icomoon-font-path}/icomoon.eot#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function unicode($str) {
+  @return unquote("\"") + $str + unquote("\"");
+}
+
+.icomoon-close {
+  &:before {
+    content: unicode($icomoon-close);
+  }
+}
+.icomoon-checkmark {
+  &:before {
+    content: unicode($icomoon-checkmark); 
+  }
+}
+.icomoon-arrow-nav {
+  &:before {
+    content: unicode($icomoon-arrow-nav);
+  }
+}
+.icomoon-icon-arrow-1-left {
+  &:before {
+    content: unicode($icomoon-icon-arrow-1-left);
+  }
+}
+.icomoon-icon-arrow-1-right {
+  &:before {
+    content: unicode($icomoon-icon-arrow-1-right);
+  }
+}
+.icomoon-icon-arrow-2-left {
+  &:before {
+    content: unicode($icomoon-icon-arrow-2-left);
+  }
+}
+.icomoon-icon-arrow-2-right {
+  &:before {
+    content: unicode($icomoon-icon-arrow-2-right);
+  }
+}
+.icomoon-icon-download {
+  &:before {
+    content: unicode($icomoon-icon-download);
+  }
+}
+.icomoon-icon-location {
+  &:before {
+    content: unicode($icomoon-icon-location);
+  }
+}
+.icomoon-icon-search {
+  &:before {
+    content: unicode($icomoon-icon-search);
+  }
+}
+.icomoon-icon-sm-facebook {
+  &:before {
+    content: unicode($icomoon-icon-sm-facebook);
+  }
+}
+.icomoon-icon-sm-instagram {
+  &:before {
+    content: unicode($icomoon-icon-sm-instagram);
+  }
+}
+.icomoon-icon-sm-youtube {
+  &:before {
+    content: unicode($icomoon-icon-sm-youtube);
+  }
+}

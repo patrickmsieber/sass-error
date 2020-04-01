@@ -1,0 +1,84 @@
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 8px;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets {
+    bottom: 17px;
+}
+
+.swiper-pagination-bullet {
+    background: $grey;
+    opacity: 1;
+
+    @include hover-focus-active {
+        background: $red-dark;
+        outline: none;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background: $red;
+}
+
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+}
+
+.swiper-button-next {
+    background: none;
+
+    &:before {
+        @include icomoon;
+        content: $icomoon-icon-arrow-2-right;
+    }
+}
+
+.swiper-button-prev {
+    background: none;
+
+    &:before {
+        @include icomoon;
+        content: $icomoon-icon-arrow-2-left;
+    }
+}
+
+.swiper-slide {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.swiper-button-prev {
+    left: $spacing-1;
+    z-index: 11;
+}
+
+.swiper-button-next {
+    right: $spacing-1;
+    z-index: 11;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    bottom: 15px;
+    top: auto;
+    height: auto;
+    color: $red;
+
+    @include hover-focus-active {
+        outline: none;
+    }
+}
+
+.gallery-plugin .swiper-container {
+    padding-bottom: 60px;
+    background: $grey-light;
+
+    p {
+        color: $black;
+        margin-top: $spacing-1;
+        padding-left: $spacing-1;
+        padding-right: $spacing-1;
+    }
+}

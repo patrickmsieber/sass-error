@@ -1,0 +1,340 @@
+
+
+
+// #############################################################################
+// Base Fonts definition
+
+
+@mixin museosans-reg {
+    font-family: MuseoSans, Tahoma, sans-serif;
+    font-weight: 300;
+    @include antialiased();
+}
+
+// @mixin font-light {
+//     font-family: MuseoSans, Tahoma, sans-serif;
+//     font-weight: 300;
+//     @include antialiased();
+// }
+
+@mixin museosans-bold {
+    font-family: MuseoSans, Tahoma, sans-serif;
+    font-weight: 700;
+    @include antialiased();
+}
+
+@mixin font-extrabold {
+    font-family: MuseoSans, Tahoma, sans-serif;
+    font-weight: 800;
+    @include antialiased();
+}
+
+@mixin museo-reg {
+    font-family: Museo, Tahoma, sans-serif;
+    font-weight: 300;
+    @include antialiased();
+}
+
+// #############################################################################
+// BODY TEXT font styles
+
+// P
+@mixin text-font() {
+    @include museosans-reg;
+    @include font-size($font-size-default);
+}
+
+// P lead
+@mixin text-font-large() {
+    @include museosans-reg;
+    @include font-size($font-size-medium);
+}
+
+// B + H4
+@mixin text-font-bold() {
+    @include museosans-bold;
+    @include font-size($font-size-default);
+}
+
+// small
+@mixin text-font-small() {
+    @include museosans-reg;
+    @include font-size($font-size-small);
+}
+
+// small b
+@mixin text-font-small-bold() {
+    @include museosans-bold;
+    @include font-size($font-size-small);
+}
+
+
+// #############################################################################
+// TITLE font styles
+
+// H1
+@mixin title-font-xlarge {
+    @include museo-reg;
+    @include font-size($font-size-xlarge);
+}
+
+// H2
+@mixin title-font-large {
+    @include museo-reg;
+    @include font-size($font-size-large);
+}
+
+// H3
+@mixin title-font-medium {
+    @include museosans-bold;
+    @include font-size($font-size-medium);
+}
+
+// H5
+@mixin title-font-small {
+    @include museosans-bold;
+    @include font-size($font-size-small-title);
+}
+
+// #############################################################################
+// Other font styles
+
+@mixin quote-font {
+    @include museo-reg;
+    line-height: 1.2;
+    @include font-size($font-size-medium);
+}
+
+@mixin default-button-font {
+    @include text-font-bold;
+    letter-spacing: 0.02em;
+}
+
+@mixin large-button-font {
+    @include title-font-medium;
+    letter-spacing: 0.02em;
+}
+
+@mixin nav-font {
+    @include text-font-bold;
+    letter-spacing: 0.05em;
+    @include font-size($font-size-default);
+}
+
+@mixin nav-font-secondary {
+    @include text-font;
+    @include font-size($font-size-small);
+}
+
+@mixin nav-dropdown-font {
+    @include text-font-small-bold;
+}
+
+@mixin figcaption-font {
+    @include museosans-reg;
+    font-style: italic;
+    line-height: 1.2;
+    @include font-size($font-size-default);
+}
+
+// #############################################################################
+// Font Assignement
+
+.btn.btn-link,
+body {
+    @include text-font;
+}
+
+.gm-style .gm-style-iw strong {
+    @include text-font;
+    @include museosans-bold;
+}
+
+h1,
+.h1 {
+    @include title-font-xlarge;
+}
+
+h2,
+.h2 {
+    @include title-font-large;
+}
+
+h3,
+.h3 {
+    @include title-font-medium;
+}
+
+h4,
+.h4,
+.h4 a {
+    @include title-font-small;
+}
+
+p {
+    @include text-font;
+
+    &.lead {
+        @include text-font-large;
+        a {
+            @include text-font-large;
+        }
+    }
+
+    &.small {
+        @include text-font-small;
+    }
+}
+
+.collapse-wrapper {
+    h4 {
+        @include text-font-large;
+        a {
+            @include text-font-large;
+        }
+    }
+}
+
+.btn {
+    @include default-button-font;
+
+    &.btn-lg {
+        @include large-button-font;
+    }
+}
+
+.location-list a,
+strong,
+b {
+    @include museosans-bold;
+}
+
+.sub-nav a,
+.gm-style .gm-style-iw,
+.gm-style .gm-style-iw a,
+small,
+.date,
+.lines-button .menu-text,
+.breadcrumb-item {
+    @include text-font-small;
+}
+
+blockquote {
+    &, p {
+        @include quote-font;
+    }
+
+    &:before, &:after {
+        content:"";
+    }
+
+    cite {
+        @include museo-reg;
+        font-style: normal;
+        font-size: 1rem;
+    }
+}
+
+a {
+    @include text-font;
+
+    &.link-style-2 {
+        @include text-font-bold;
+    }
+}
+
+.navbar-navigation {
+    .mobile-bottom-list a,
+    .top-list a {
+        @include nav-font-secondary;
+    }
+
+    .main-list {
+        a {
+            @include nav-font;
+        }
+
+        .dropdown-menu a {
+            @include nav-dropdown-font;
+        }
+    }
+}
+
+.mobile-list > .nav-item > .nav-link,
+.mobile-list > .nav-item > .dropdown > .nav-link {
+    @include nav-font;
+}
+
+.dropdown-menu.lvl-1 > .dropdown-item,
+.dropdown-menu.lvl-1 > .dropdown-submenu > .dropdown-item {
+    @include text-font;
+    @include font-size($font-size-default);
+
+    &.current {font-weight: 500;}
+}
+
+.dropdown-menu.lvl-2 > .dropdown-item {
+    @include nav-font-secondary;
+}
+
+form {
+    .custom-select select,
+    .form-control {
+        &.form-control-sm {
+            @include text-font-small;
+        }
+    }
+
+    label,
+    .title {
+        @include text-font-bold;
+
+        &.label-small {
+            @include title-font-small;
+        }
+
+        &.custom-radio,
+        &.custom-checkbox {
+            @include text-font;
+        }
+    }
+
+    .radio,
+    .checkbox {
+
+        label {
+            @include text-font;
+        }
+
+        &.small {
+            label {
+                @include text-font-small;
+            }
+        }
+    }
+}
+
+figcaption {
+    @include figcaption-font;
+}
+
+.help-block,
+.errorlist,
+.error-message,
+.error-block,
+.invalid-feedback {
+    @include title-font-small;
+}
+
+.fancybox-caption,
+.fancybox-infobar {
+    @include text-font;
+}
+
+.rest-buttons a {
+    margin: 0 15px 15px 15px;
+}
+
+.wh__text {
+    margin-bottom: 20px;
+}

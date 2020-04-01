@@ -1,0 +1,99 @@
+.gallery-plugin {
+    width: 100%;
+    position: relative;
+
+    .swiper-slide {
+        div {
+            background: $grey-light;
+        }
+    }
+
+    .aspect-ratio-container {
+        @include aspect-ratio();
+        overflow: visible;
+    }
+
+    h1, h2, h3, p, p.lead, a {
+        color: map-get($teaser-image-color, xs);
+
+        @include media-breakpoint-up(md) {
+            color: map-get($teaser-image-color, md);
+        }
+    }
+
+    .restaurant h1, .restaurant h2, .restaurant h3, .restaurant p, .restaurant p.lead, .restaurant a {
+        color: map-get($teaser-image-color-restaurant, xs);
+
+        @include media-breakpoint-up(md) {
+            color: map-get($teaser-image-color-restaurant, md);
+        }
+    }
+
+    .restaurant-see h1, .restaurant-see h2, .restaurant-see h3, .restaurant-see p, .restaurant-see p.lead, .restaurant-see a {
+        color: map-get($teaser-image-color-see, xs);
+
+        @include media-breakpoint-up(md) {
+            color: map-get($teaser-image-color-see, md);
+        }
+    }
+
+    .restaurant-park h1, .restaurant-park h2, .restaurant-park h3, .restaurant-park p, .restaurant-park p.lead, .restaurant-park a {
+        color: map-get($teaser-image-color-park, xs);
+
+        @include media-breakpoint-up(md) {
+            color: map-get($teaser-image-color-park, md);
+        }
+    }
+
+    .btn {
+        margin-top: $spacing-1;
+    }
+
+    .image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .text-overlay-wrapper {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding-left: $grid-gutter-width / 2;
+        padding-right: $grid-gutter-width / 2;
+        padding-top: $grid-gutter-width;
+        z-index: 10;
+
+        @include media-breakpoint-up(sm) {
+            padding-top: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .text-overlay {
+            @include max-width-2;
+            @include media-breakpoint-up(md) {
+                width: 100%;
+            }
+
+            @include media-breakpoint-down(md) {
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            position: relative;
+            width: 100%;
+            z-index: 60;
+        }
+    }
+
+    .swiper-container {
+        height: 100%;
+    }
+}

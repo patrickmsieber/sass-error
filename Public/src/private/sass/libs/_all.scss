@@ -1,0 +1,11 @@
+$icomoon-font-path: 'libs/icomoon/fonts';
+@import "icomoon/style.scss";
+@import "icomoon/variables.scss";
+
+@import "~bootstrap/scss/functions";
+@import "../skin/bootstrap-variables";
+@import "../skin/variables";
+@import "../skin/variables_common";
+@import "~bootstrap";
+
+@import "slick";

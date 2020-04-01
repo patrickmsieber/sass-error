@@ -1,0 +1,149 @@
+@mixin make-spacing-top-xs-only($size) {
+    @include media-breakpoint-down(xs) {
+        margin-top: $size;
+    }
+}
+
+@mixin make-spacing-top-sm-only($size) {
+    @include media-breakpoint-only(sm) {
+        margin-top: $size;
+    }
+}
+
+@mixin make-spacing-top-md-only($size) {
+    @include media-breakpoint-only(md) {
+        margin-top: $size;
+    }
+}
+
+@mixin make-spacing-top-lg-only($size) {
+    @include media-breakpoint-up(lg) {
+        margin-top: $size;
+    }
+}
+
+@mixin make-spacing-top-xs($size) {
+    margin-top: $size;
+}
+
+@mixin make-spacing-top-sm($size) {
+    @include media-breakpoint-up(sm) {
+        margin-top: $size;
+    }
+}
+
+@mixin make-spacing-top-md($size) {
+    @include media-breakpoint-up(md) {
+        margin-top: $size;
+    }
+}
+
+@mixin make-spacing-top-lg($size) {
+    @include media-breakpoint-up(lg) {
+        margin-top: $size;
+    }
+}
+
+// spacing for gird
+@mixin make-grid-spacing-base($size, $colum) {
+    $next: $colum + 1;
+    > *:nth-child(1n+#{$next}) {
+        margin-top: $size;
+    }
+}
+
+@mixin make-grid-spacing-xs($size, $colum) {
+    @include make-grid-spacing-base($size, $colum);
+}
+
+@mixin make-grid-spacing-sm($size, $colum) {
+    @include media-breakpoint-up(sm) {
+        @include make-grid-spacing-base($size, $colum);
+    }
+}
+
+@mixin make-grid-spacing-md($size, $colum) {
+    @include media-breakpoint-up(md) {
+        @include make-grid-spacing-base($size, $colum);
+    }
+}
+
+@mixin make-grid-spacing-lg($size, $colum) {
+    @include media-breakpoint-up(lg) {
+        @include make-grid-spacing-base($size, $colum);
+    }
+}
+
+@mixin make-grid-spacing-xs-only($size, $colum) {
+    @include media-breakpoint-down(xs) {
+        @include make-grid-spacing-base($size, $colum);
+    }
+}
+
+@mixin make-grid-spacing-sm-only($size, $colum) {
+    @include media-breakpoint-only(sm) {
+        @include make-grid-spacing-base($size, $colum);
+    }
+}
+
+@mixin make-grid-spacing-md-only($size, $colum) {
+    @include media-breakpoint-only(md) {
+        @include make-grid-spacing-base($size, $colum);
+    }
+}
+
+@mixin make-grid-spacing-lg($size, $colum) {
+    @include media-breakpoint-up(lg) {
+        @include make-grid-spacing-base($size, $colum);
+    }
+}
+
+
+/*** PADDING ROWS ***/
+
+@mixin make-padding-row-xs-only($size) {
+    @include media-breakpoint-down(xs) {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+}
+
+@mixin make-padding-row-sm-only($size) {
+    @include media-breakpoint-only(sm) {
+        padding-top: ($size);
+        padding-bottom: ($size);
+    }
+}
+
+@mixin make-padding-row-md-only($size) {
+    @include media-breakpoint-only(md) {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+}
+
+@mixin make-padding-row-xs($size) {
+    padding-top: $size;
+    padding-bottom: $size;
+}
+
+@mixin make-padding-row-sm($size) {
+    @include media-breakpoint-up(sm) {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+}
+
+@mixin make-padding-row-md($size) {
+    @include media-breakpoint-up(md) {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+}
+
+@mixin make-padding-row-lg($size) {
+    @include media-breakpoint-up(lg) {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+}

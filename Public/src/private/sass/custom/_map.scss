@@ -1,0 +1,20 @@
+#map_canvas {
+    height: 500px;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+        height: 500px;
+        width: 100%;
+    };
+}
+
+.gmnoprint .gm-style-mtc {
+	display: none;
+}
+
+@include media-breakpoint-down(sm) {
+    .map-module,
+    .mobile-map {
+        // display: none;
+    }
+}

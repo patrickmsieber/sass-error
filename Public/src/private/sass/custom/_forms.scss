@@ -1,0 +1,213 @@
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid $red;
+    -webkit-text-fill-color: $black;
+    -webkit-box-shadow: 0 0 0px 1000px $custom-select-bg inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.custom-control-label::after {
+    background-size: 84% 84%;
+}
+
+.custom-select.salutation {
+    width: auto;
+}
+
+.custom-select {
+    background: $custom-select-bg;
+}
+
+.custom-select-arrow {
+    // @include icon-right(0, $icomoon-arrow-nav, $icon-size: $link-icon-size);
+    @include nav-arrow;
+    display: inline-block;
+
+    &:before {
+        transform: rotate(180deg);
+        right: 7px;
+    }
+}
+
+.form-check {
+    padding-left: 0;
+}
+
+.page-layout-medium {
+    > .formContainer {
+        form {
+            @include media-breakpoint-up(lg) {
+                width: 75%;
+            }
+        }
+    }
+}
+
+.formContainer {
+    margin-bottom: 20px;
+    .col-xs-24 {
+        width: 100%;
+    }
+}
+
+/* checkboxes */
+.form-radioCheck:not(:checked),
+.form-radioCheck:checked {
+    position: absolute;
+    opacity: 0;
+}
+
+.form-radioCheck:not(:checked) + label,
+.form-radioCheck:checked + label {
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.form-radioCheck[type="radio"]:not(:checked) + label,
+.form-radioCheck.radio[type="checkbox"]:not(:checked) + label,
+.form-radioCheck[type="radio"]:checked + label,
+.form-radioCheck.radio[type="checkbox"]:checked + label {
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+/* checkbox aspect */
+.form-radioCheck:not(:checked) + label:before,
+.form-radioCheck:checked + label:before {
+    content: '';
+    position: absolute;
+    width: 30px; 
+    height: 30px;
+    border: 1px solid $grey-light;
+    background: $custom-select-bg;
+    border-radius: 3px;
+    margin-left: 0;
+    margin-right: 0;
+    vertical-align: middle;
+    display: inline-block;
+    left: 0;
+
+    .has-error & {
+        border-color: $red;
+    }
+}
+
+.form-radioCheck:checked + label:before {
+    border: 1px solid $custom-select-bg;
+    background: $custom-select-bg;
+}
+
+.form-radioCheck[type="radio"]:checked + label:before,
+.form-radioCheck.radio[type="checkbox"]:checked + label:before {
+    border: 1px solid $custom-select-bg;
+}
+
+.form-radioCheck[type="radio"]:not(:checked) + label:before,
+.form-radioCheck.radio[type="checkbox"]:not(:checked) + label:before,
+.form-radioCheck[type="radio"]:checked + label:before,
+.form-radioCheck.radio[type="checkbox"]:checked + label:before {
+    border-radius: 100%;
+}
+
+
+/* checked mark aspect */
+.form-radioCheck:not(:checked) + label:after,
+.form-radioCheck:checked + label:after {
+    content: '';
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: $custom-select-bg;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.form-radioCheck[type="checkbox"]:not(:checked) + label:after,
+.form-radioCheck[type="checkbox"]:checked + label:after {
+    font-family: 'icomoon';
+    content: '\e90a';
+    color: $red;
+    background: transparent;
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+    font-size: 1rem;
+    top: 0;
+    left: 0;
+}
+
+.form-radioCheck[type="radio"]:not(:checked) + label:after,
+.form-radioCheck.radio[type="checkbox"]:not(:checked) + label:after,
+.form-radioCheck[type="radio"]:checked + label:after,
+.form-radioCheck.radio[type="checkbox"]:checked + label:after {
+    border-radius: 100%;
+    font-family: 'icomoon';
+    content: '\e90a';
+    color: $red;
+    background: transparent;
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+    font-size: 1rem;
+    top: 0;
+    left: 0;
+}
+
+.form-radioCheck[type="checkbox"]:not(:checked) + label,
+.form-radioCheck[type="checkbox"]:checked + label {
+    display: block !important;
+}
+
+/* checked mark aspect changes */
+.form-radioCheck:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(1);
+}
+.form-radioCheck:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.form-radioCheck[type="checkbox"]:checked + label:after {
+    color: $red;
+}
+
+.form-radioCheck:disabled + label,
+.form-radioCheck:disabled + label:after {
+    color: $custom-select-bg;
+    cursor: not-allowed;
+}
+
+
+select.form-control,
+.form-control {
+    &.has-error {
+        border-color: $red;
+        & + .control-label {
+            color: $red;
+        }
+    }
+}
+
+label.has-error {
+    color: $red;
+    display: block;
+    padding: 5px;
+}
+
+form .radio label[class*=has-error],
+form .checkbox label[class*=has-error] {
+    font-weight: 700;
+}

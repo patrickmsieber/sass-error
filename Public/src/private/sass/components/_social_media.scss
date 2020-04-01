@@ -1,0 +1,117 @@
+.social-media-links {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+
+    a {
+        min-width: $social-media-container-size;
+        min-height: $social-media-container-size;
+        border-radius: $social-media-container-radius;
+        display: block;
+        position: relative;
+        @include link-reset;
+        @include transition(all 300ms);
+        margin: 0 $social-icons-spacing;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:hover {
+            opacity: $social-media-hover-opacity;
+        }
+
+        span[class*=icomoon] {
+            @include xy-centered;
+            font-size: $social-media-icons-size;
+            vertical-align: middle;
+        }
+
+
+        // &.instagram {
+        //     background: $bg-instagram;
+        //     color: $color-instagram;
+        //     border: $border-instagram;
+        // 
+        //     &:hover {
+        //         border: $border-hover-instagram;
+        //     }
+        // 
+        // }
+        // 
+        // &.facebook {
+        //     background: $bg-facebook;
+        //     color: $color-facebook;
+        //     border: $border-facebook;
+        // 
+        //     &:hover {
+        //         border: $border-hover-facebook;
+        //     }
+        // }
+        // 
+        // &.twitter {
+        //     background: $bg-twitter;
+        //     color: $color-twitter;
+        //     border: $border-twitter;
+        // 
+        //     &:hover {
+        //         border: $border-hover-twitter;
+        //     }
+        // }
+        // 
+        // &.pinterest {
+        //     background: $bg-pinterest;
+        //     color: $color-pinterest;
+        //     border: $border-pinterest;
+        // 
+        //     &:hover {
+        //         border: $border-hover-pinterest;
+        //     }
+        // }
+        // 
+        // &.youtube {
+        //     background: $bg-youtube;
+        //     color: $color-youtube;
+        //     border: $border-youtube;
+        // 
+        //     &:hover {
+        //         border: $border-hover-youtube;
+        //     }
+        // }
+        // 
+        // &.linkedin {
+        //     background: $bg-linkedin;
+        //     color: $color-linkedin;
+        //     border: $border-linkedin;
+        // 
+        //     &:hover {
+        //         border: $border-hover-linkedin;
+        //     }
+        // }
+        // 
+        // &.xing {
+        //     background: $bg-xing;
+        //     color: $color-xing;
+        //     border: $border-xing;
+        // 
+        //     &:hover {
+        //         border: $border-hover-xing;
+        //     }
+        // }
+        // 
+        // &.googleplus {
+        //     background: $bg-googleplus;
+        //     color: $color-googleplus;
+        //     border: $border-googleplus;
+        // 
+        //     &:hover {
+        //         border: $border-hover-googleplus;
+        //     }
+        // }
+    }
+}

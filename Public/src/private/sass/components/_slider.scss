@@ -1,0 +1,40 @@
+.slider {
+	&__navigation {
+		height: 20px;
+		margin-top: 10px;
+		text-align: center;
+	}
+
+	&__counter {
+		display: block;
+		text-align: center;
+	}
+
+	&__dots {
+		li {
+			height: 14px;
+			width: 14px;
+			background: #646464;
+			border-radius: 50%;
+			margin: 0 8px;
+			button {
+				height: 14px;
+				width: 14px;
+				opacity: 0;
+			}
+
+			&.slick-active {
+				background: #96286e;
+			}
+		}
+	}
+
+	&[data-itemsDesktop="2"],
+	&[data-itemsDesktop="3"] {
+		margin: 0 -15px;
+		.slide__caption { display: none; }
+		.slider__slide { padding: 15px; }
+	}
+
+	//.slick-dots li.slick-active button {background: #96286e;}
+}

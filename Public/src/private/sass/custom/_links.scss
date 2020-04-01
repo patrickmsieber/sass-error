@@ -1,0 +1,73 @@
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:visited {
+    outline: 0;
+}
+
+a {
+    transition: $link-transition;
+}
+
+.link-arrow-right {
+    @include icon-right($link-icon-padding, $icomoon-icon-arrow-1-right, $icon-size: $link-icon-size);
+    display: inline-block;
+
+    &:before {
+        transition: $link-transition;
+    }
+
+    &:hover {
+        &:before {
+            right: -3px;
+        }
+    }
+}
+
+.link-arrow-left {
+    @include icon-left($link-icon-padding, $icomoon-icon-arrow-1-left, $icon-size: $link-icon-size);
+
+    &:before {
+        transition: $link-transition;
+    }
+
+    &:hover {
+        &:before {
+            left: -3px;
+        }
+    }
+}
+
+.link-download-left {
+    @include icon-left($link-icon-padding, $icomoon-icon-download, $icon-size: $link-icon-size);
+}
+.link-download-left {
+    @include media-breakpoint-down(sm) {
+        &:before { 
+            top: 15%;
+            font-size: $icon-size-download-xs
+        }
+    }
+}
+
+.link-search-left {
+    @include icon-left(1.3em, $icomoon-icon-search, $icon-size: .85em);
+}
+.mobile-bottom-list {
+    .link-search-left {
+        &:before { 
+            content: '';
+        }
+    }
+}
+
+.restaurant a {
+    color: $rest-rest;
+}
+.restaurant-see a {
+    color: $rest-see;
+}
+.restaurant-par a {
+    color: $rest-park;
+}
